@@ -1,16 +1,16 @@
 class Wagon {
 
-    constructor(nom, population, prestige, infrastructure, corruption){
+    constructor(nom, population, prestige, infrastructure, corruption, influence_du_joueur){
         this._nom = nom;
         this._population = population;
         this._prestige = prestige;
         this._infrastructure = infrastructure;
         this._corruption = corruption;
+        this._influence_du_joueur = influence_du_joueur;
 
     // Éléments par défaut (donc pas besoin de l'ajouter dans la liste des wagon)
         this._taux_croissance_population = 0.04;
         this._taux_mortalite = 0.01;
-        this._influence_du_joueur = 0
         this._cout_corruption = 1
         this._taux_croissance_economie = 0.05
         this._gdp = population * 10

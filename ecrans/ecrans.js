@@ -31,10 +31,10 @@ btn_passer_tour_simple.addEventListener("click", () => {
 
 
 
-const btn_affichage_pays = document.querySelector("#btn_affichage_pays");
+const btn_affichage_wagons = document.querySelector("#btn_affichage_wagons");
 const div_affichage_pays = document.querySelector("#div_affichage_pays");
 
-btn_affichage_pays.addEventListener("click", () => {
+btn_affichage_wagons.addEventListener("click", () => {
   if (div_affichage_pays.classList.contains("is-hidden")) {
     div_affichage_pays.classList.remove("is-hidden");
   } else {
