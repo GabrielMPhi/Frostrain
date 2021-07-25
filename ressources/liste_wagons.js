@@ -1,9 +1,9 @@
 let wagon_factory = new WagonFactory(); 
 
-let wagon_locomotive = wagon_factory.get_pays({nom: "Locomotive", population : 21226, prestige : 100, infrastructure : 100, corruption : 15, influence_du_joueur : 10}) 
-let wagon_01 = wagon_factory.get_pays({nom: "Wagon #1", population : 31246, prestige : 100, infrastructure : 100, corruption : 20, influence_du_joueur : 1}) 
-let wagon_02 = wagon_factory.get_pays({nom: "Wagon #2", population : 54765, prestige : 100, infrastructure : 20, corruption : 30, influence_du_joueur : 1})   
-let wagon_reserve = wagon_factory.get_pays({nom: "Réserve", population : 2355,  prestige : 100, infrastructure : 50, corruption : 15, influence_du_joueur : 1})
+let wagon_locomotive = wagon_factory.get_pays({nom: "Locomotive", population : 5, infrastructure : 100, corruption : 15, influence_du_joueur : 10}) 
+let wagon_01 = wagon_factory.get_pays({nom: "Wagon #1", population : 12, infrastructure : 100, corruption : 20, influence_du_joueur : 1}) 
+let wagon_02 = wagon_factory.get_pays({nom: "Wagon #2", population : 14, infrastructure : 20, corruption : 30, influence_du_joueur : 1})   
+let wagon_reserve = wagon_factory.get_pays({nom: "Réserve", population : 2, infrastructure : 50, corruption : 15, influence_du_joueur : 1})
 
 
 

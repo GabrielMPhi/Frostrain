@@ -1,22 +1,33 @@
 class Wagon {
 
-    constructor(nom, population, prestige, infrastructure, corruption, influence_du_joueur){
+    constructor(nom, population, infrastructure, corruption, influence_du_joueur){
         this._nom = nom;
         this._population = population;
-        this._prestige = prestige;
-        this._infrastructure = infrastructure;
+        this._infrastructure = infrastructure; // genre, maintenance
         this._corruption = corruption;
         this._influence_du_joueur = influence_du_joueur;
 
     // Éléments par défaut (donc pas besoin de l'ajouter dans la liste des wagon)
+        this._liste_population = []
+        this._stabilite_wagon = 100
         this._taux_croissance_population = 0.04;
         this._taux_mortalite = 0.01;
         this._cout_corruption = 1
         this._taux_croissance_economie = 0.05
-        this._gdp = population * 10
 
         // ajouter territoire, taux de mortalité, etc.
     }
+
+     creer_liste_population(population_nombre){
+        let personnage_factory = new PersonnageFactory()
+        let liste_perso_a_retourner = []
+        for (let i = 0; i < nb_perso; i++){
+            liste_perso_a_retourner.push(personnage_factory.creer_personnage())
+            };
+        return liste_perso_a_retourner
+        }
+
+
 
     get nom (){
         return this._nom
@@ -67,16 +78,18 @@ class Wagon {
         this._influence_du_joueur = e
     }
 
-    croissance_pays (){
-        //Population
-        let augmentation_population = parseInt((this._population * (this._taux_croissance_population - this._taux_mortalite)), 10)
-        this._population += augmentation_population
-        //Economie
-        
-        let croissance_econ_reelle = (this._taux_croissance_economie - (this._corruption / 100)).toFixed(2)
+    croissance_wagon (){
+        console.log(this._liste_population)
+        //Économie
+
 
         //Cout corruption
         this._cout_corruption = parseInt(100-this._corruption) + parseInt((this._infrastructure/100),10)
+
+        if (this._influence_du_joueur > 0 && this._stabilite_wagon <100){
+            this._stabilite_wagon+=this._influence_du_joueur
+
+        }
 
 
 
@@ -91,6 +104,13 @@ class Wagon {
             }
 
 
+        }
+
+
+
+        // ajustements En faire une fonction plus générale et modulaire?
+        if (this._stabilite_wagon >100){
+            this._stabilite_wagon=100
         }
 
 

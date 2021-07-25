@@ -98,7 +98,7 @@ function set_bulma_modal(id_modal, openers_elements_ids, closers_elements_ids) {
   closers_elements_ids.forEach((element) =>
     document.getElementById(element).addEventListener("click", () => {
       update_liste_choix();
-      update_affichage_pays();
+      update_affichage_wagon();
       modal.classList.remove("is-active");
     })
   );
@@ -123,13 +123,13 @@ function function_passer_tour_simple(){
   jeu.tour.augmenter();
   update_liste_choix();
   update_affichage_joueur();
-  update_affichage_pays();
+  update_affichage_wagon();
 }
 
 function fermer_bouton_action(button_id) {
   document.getElementById(button_id).remove();
   update_affichage_joueur();
-  update_affichage_pays();
+  update_affichage_wagon();
 }
 
 modal_option1.onclick = function changement_de_tour_modal() {

@@ -6,6 +6,7 @@ class Joueur {
         this._agents = agents
         this._danger = 0
         this._liste_avantages=liste_avantages
+        this._stabilite_train = 100
     }
 
     get score (){

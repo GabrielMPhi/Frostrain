@@ -1,6 +1,6 @@
-function update_affichage_pays() {
+function update_affichage_wagon() {
     document.getElementById("affichage_stats_pays").innerHTML = "";
-    if (jeu.monde._pays_etranger != []) {
+    if (jeu.monde._wagons_du_train != []) {
       let affichage_tableau_pays = document.createElement("table");
       affichage_tableau_pays.createTHead();
       let titre_pays_nom = document.createElement("th");
@@ -25,7 +25,7 @@ function update_affichage_pays() {
       affichage_tableau_pays.appendChild(titre_pays_influence_du_joueur);
       affichage_tableau_pays.appendChild(titre_actions);
   
-      jeu.monde._pays_etranger.forEach((pays) => {
+      jeu.monde._wagons_du_train.forEach((pays) => {
         document
           .getElementById("affichage_stats_pays")
           .appendChild(affichage_tableau_pays);

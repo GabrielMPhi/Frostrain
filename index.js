@@ -8,12 +8,10 @@ function(){
 })
 
 function initialisation_dilemme(){
-// master list = peins de perso
-
 	let liste_jeu_personnages=  creer_liste_personnage(nombre_de_personnage)
 	let liste_des_agents = creer_liste_personnage(4)
-	jeu = new Jeu(0, liste_des_wagons, liste_jeu_personnages, liste_des_agents, liste_avantages)
-	update_affichage_pays()
+	jeu = new Jeu(0, liste_des_wagons, liste_des_agents, liste_avantages)
+	update_affichage_wagon()
 	console.log(jeu._monde)
 }
 function ajouter_les_observateurs(){
@@ -29,7 +27,7 @@ affichage_action_btn.onclick = function changement_de_tour_affichage(){
 	modal_option2.innerHTML = jeu.dilemme_du_tour_objet.choix_2.nom_choix
 	update_affichage_joueur()
 	update_liste_choix()
-	update_affichage_pays()
+	update_affichage_wagon()
 }
 
 function selection_des_choix(){
