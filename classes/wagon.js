@@ -1,14 +1,14 @@
 class Wagon {
 
-    constructor(nom, population, infrastructure, corruption, influence_du_joueur){
+    constructor(nom, population, infrastructure, corruption, influence_du_joueur, liste_population_wagon){
         this._nom = nom;
         this._population = population;
         this._infrastructure = infrastructure; // genre, maintenance
         this._corruption = corruption;
         this._influence_du_joueur = influence_du_joueur;
+        this._liste_population = liste_population_wagon;
 
     // Éléments par défaut (donc pas besoin de l'ajouter dans la liste des wagon)
-        this._liste_population = []
         this._stabilite_wagon = 100
         this._taux_croissance_population = 0.04;
         this._taux_mortalite = 0.01;
@@ -17,17 +17,6 @@ class Wagon {
 
         // ajouter territoire, taux de mortalité, etc.
     }
-
-     creer_liste_population(population_nombre){
-        let personnage_factory = new PersonnageFactory()
-        let liste_perso_a_retourner = []
-        for (let i = 0; i < nb_perso; i++){
-            liste_perso_a_retourner.push(personnage_factory.creer_personnage())
-            };
-        return liste_perso_a_retourner
-        }
-
-
 
     get nom (){
         return this._nom

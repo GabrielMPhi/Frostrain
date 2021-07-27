@@ -126,3 +126,5 @@ ressources.liste_prenoms_habitant_femme = [].concat(liste_prenoms_habitant_femme
 
 ressources.liste_prenoms_personnages_total = [].concat(ressources.liste_prenoms_habitant_homme, ressources.liste_prenoms_habitant_femme)
 ressources.liste_surnom_total = [].concat(ressources.liste_de_surnom_homme, ressources.liste_de_surnom_femme)
+
+console.log(ressources)

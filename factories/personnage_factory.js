@@ -31,7 +31,6 @@ class PersonnageFactory{
     }
 
     generer_random_prenom(genre){
-        
         let prenom_genere = "Bob"
         switch (genre){
         case "Homme":

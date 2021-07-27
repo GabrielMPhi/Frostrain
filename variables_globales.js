@@ -10,7 +10,7 @@ let ressources = {
     liste_prenoms_habitant_femme: [],
     liste_prenoms_personnages_total: [],
     noms_famille_personnages: [],
-    liste_genre : [],
+    liste_genre : ["Homme", "Femme", "Homme", "Femme", "Homme", "Femme", "Non-binaire"],
     liste_de_surnom_homme: [],
     liste_de_surnom_femme: [],
     liste_surnom_total: [],
