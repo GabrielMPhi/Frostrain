@@ -14,6 +14,7 @@ class Wagon {
         this._taux_mortalite = 0.01;
         this._cout_corruption = 1
         this._taux_croissance_economie = 0.05
+        this._ressources = 100
 
         // ajouter territoire, taux de mortalité, etc.
     }
@@ -70,7 +71,7 @@ class Wagon {
     croissance_wagon (){
         console.log(this._liste_population)
         //Économie
-
+        this._ressources = this.adapter_ressources_wagon()
 
         //Cout corruption
         this._cout_corruption = parseInt(100-this._corruption) + parseInt((this._infrastructure/100),10)
@@ -104,5 +105,13 @@ class Wagon {
 
 
     } 
+
+    adapter_ressources_wagon(){
+        let ressources_wagon_calcul = 0
+        for (let i = 0; i < this._liste_population.length; i++) {
+            ressources_wagon_calcul += this._liste_population[i]._richesse;
+          } 
+        return ressources_wagon_calcul
+    }
 
 }
