@@ -8,9 +8,8 @@ function(){
 })
 
 function initialisation_dilemme(){
-	let liste_jeu_personnages=  creer_liste_personnage(nombre_de_personnage)
 	let liste_des_agents = creer_liste_personnage(4)
-	jeu = new Jeu(0, liste_des_wagons, liste_des_agents, liste_avantages)
+	jeu = new Jeu(0, liste_des_wagons, liste_des_agents, liste_avantages, liste_des_stations)
 	update_affichage_wagon()
 	console.log(jeu._monde)
 }
