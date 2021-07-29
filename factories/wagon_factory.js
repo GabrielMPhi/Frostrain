@@ -12,7 +12,6 @@ class WagonFactory{
     }
 
     get_wagon({nom, population, infrastructure, corruption, influence_du_joueur}){
-        console.log("OK!")
         let liste_population_wagon = this.creer_liste_personnage_wagon(population)
         return new Wagon(nom, population, infrastructure, corruption, influence_du_joueur, liste_population_wagon)
     }

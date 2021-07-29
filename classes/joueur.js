@@ -1,12 +1,16 @@
 class Joueur {
 
-    constructor(score, agents, liste_avantages){
+    constructor(score, agents, liste_avantages, liste_wagons){
+        this._station_actuelle = []
         this._score= score
         this._ressources = 200
         this._agents = agents
         this._danger = 0
         this._liste_avantages=liste_avantages
         this._stabilite_train = 100
+        this._wagons_du_train = liste_wagons
+        this._reserve_de_charbon_totale = 10
+
     }
 
     get score (){
@@ -46,6 +50,19 @@ class Joueur {
 
 
     changementTour(observe){
+        
+        
+        //charbon
+        this._reserve_de_charbon_totale -= this._wagons_du_train.length
+
+        
+        for (let i = 0; i < this._wagons_du_train.length; i++) {
+            this._wagons_du_train[i].croissance_wagon()
+
+          }
+
+        
+        
         if (this._ressources <= 0){
             this._influence-=1
         }

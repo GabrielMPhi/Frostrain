@@ -25,7 +25,7 @@ function update_affichage_wagon() {
       affichage_tableau_wagon.appendChild(titre_wagon_influence_du_joueur);
       affichage_tableau_wagon.appendChild(titre_actions);
   
-      jeu.monde._wagons_du_train.forEach((wagon) => {
+      jeu._joueur._wagons_du_train.forEach((wagon) => {
         document
           .getElementById("affichage_stats_pays")
           .appendChild(affichage_tableau_wagon);

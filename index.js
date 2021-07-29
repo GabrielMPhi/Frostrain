@@ -10,8 +10,11 @@ function(){
 function initialisation_dilemme(){
 	let liste_des_agents = creer_liste_personnage(4)
 	jeu = new Jeu(0, liste_des_wagons, liste_des_agents, liste_avantages, liste_des_stations)
-	update_affichage_wagon()
+	console.log(jeu._monde._liste_des_stations)
+	jeu._joueur._station_actuelle = jeu._monde._liste_des_stations[index_montreal_station]
+	console.log(jeu._joueur)
 	console.log(jeu._monde)
+	update_affichage_wagon()
 }
 function ajouter_les_observateurs(){
 	ajouter_dans_listeobservateur_tour(jeu._monde)

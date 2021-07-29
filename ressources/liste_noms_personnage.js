@@ -29,6 +29,7 @@ let liste_prenoms_habitant_femme = [
     "Anne-Marie", 
     "Marie-Pier", 
     "Marie", 
+    "Mary",
     "Anne", 
     "Anzhe", 
     "Anna", 
@@ -74,7 +75,8 @@ let noms_famille_personnages = [
     "Côté", 
     "Gingras", 
     "Jorkunite", 
-    "Oloye"]
+    "Oloye",
+    "Zemova"]
 
 let liste_genre = [
     "Homme", 
@@ -114,9 +116,6 @@ let liste_de_surnom_femme = [
 ]
 
 
-
-
-
 ressources.noms_famille_personnages = noms_famille_personnages
 ressources.liste_genre = liste_genre
 ressources.liste_de_surnom_femme = liste_de_surnom_femme
@@ -126,5 +125,3 @@ ressources.liste_prenoms_habitant_femme = [].concat(liste_prenoms_habitant_femme
 
 ressources.liste_prenoms_personnages_total = [].concat(ressources.liste_prenoms_habitant_homme, ressources.liste_prenoms_habitant_femme)
 ressources.liste_surnom_total = [].concat(ressources.liste_de_surnom_homme, ressources.liste_de_surnom_femme)
-
-console.log(ressources)

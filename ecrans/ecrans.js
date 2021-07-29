@@ -2,6 +2,7 @@ const image_modal_choix_dilemme = document.querySelector(
   "#image_modal_choix_dilemme"
 );
 const affichage_tour = document.querySelector("#affichage_tour");
+const affichage_station_actuelle = document.querySelector("#affichage_station_actuelle")
 const affichage_score = document.querySelector("#affichage_score");
 const affichage_danger = document.querySelector("#affichage_danger");
 const affichage_ressources = document.querySelector("#affichage_ressources");
@@ -57,6 +58,7 @@ btn_affichage_avantages.addEventListener("click", () => {
 
 function update_affichage_joueur() {
   affichage_tour.innerHTML = jeu.tour.numero;
+  affichage_station_actuelle.innerHTML = jeu._joueur._station_actuelle.nom
   affichage_score.innerHTML = jeu._joueur.score;
   affichage_danger.innerHTML = jeu.joueur.danger;
   affichage_ressources.innerHTML = jeu._joueur.ressources;

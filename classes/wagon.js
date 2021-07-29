@@ -70,6 +70,7 @@ class Wagon {
 
     croissance_wagon (){
         console.log(this._liste_population)
+        
         //Économie
         this._ressources = this.adapter_ressources_wagon()
 
