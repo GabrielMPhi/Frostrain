@@ -41,7 +41,9 @@ let liste_prenoms_habitant_femme = [
     "Ilona", 
     "Ida", 
     "Louise", 
-    "Gabriella"
+    "Gabriella",
+    "Joanie",
+    "Valérie"
 ];
 
 let noms_famille_personnages = [
@@ -76,7 +78,8 @@ let noms_famille_personnages = [
     "Gingras", 
     "Jorkunite", 
     "Oloye",
-    "Zemova"]
+    "Zemova",
+    "Stratis"]
 
 let liste_genre = [
     "Homme", 

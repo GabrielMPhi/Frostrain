@@ -22,6 +22,7 @@ function ajouter_les_observateurs(){
 }
 
 affichage_action_btn.onclick = function changement_de_tour_affichage(){
+	console.log("DILEMME!!!")
     let dilemme_fabrique_du_tour = selection_des_choix()
 	jeu.dilemme_du_tour_objet = dilemme_fabrique_du_tour()
     affichage_choix_a_faire_texte.innerHTML = jeu.dilemme_du_tour_objet.texte
@@ -30,7 +31,8 @@ affichage_action_btn.onclick = function changement_de_tour_affichage(){
 	update_affichage_joueur()
 	update_liste_choix()
 	update_affichage_wagon()
-}
+} 
+
 
 function selection_des_choix(){
     let choix_du_tour_numero = getRandomInt(liste_des_choix.length)

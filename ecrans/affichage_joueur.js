@@ -29,9 +29,6 @@ function update_affichage_liste_station_destinations() {
           );
           let tr_option = document.createElement("tr");
           tbody_options_destinations.appendChild(tr_option);
-          console.log(destination)
-          console.log(jeu._monde._liste_des_stations)
-          console.log(jeu._monde._liste_des_stations.find(station => station._id === destination))
           let td_option_nom = document.createElement("td");
           td_option_nom.innerHTML = jeu._monde._liste_des_stations.find(station => station._id === destination)._nom;
   
@@ -56,10 +53,6 @@ function update_affichage_liste_station_destinations() {
                 update_affichage_joueur();
                 update_affichage_wagon();
               });
-
-
-
-
 
   
         }
