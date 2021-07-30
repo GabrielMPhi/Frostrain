@@ -49,8 +49,6 @@ function update_affichage_liste_station_destinations() {
             button_choisir_destionation.className = "button is-small is-success";
             button_choisir_destionation.value = "En route! All aboard!";
             button_choisir_destionation.addEventListener("click", () => {
-                jeu.joueur.score+=5
-                jeu.joueur.danger+=5
                 jeu._joueur.changement_station(station_actuelle)
                 function_passer_tour_simple();
                 update_affichage_joueur();

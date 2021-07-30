@@ -9,6 +9,7 @@ const affichage_liste_station_destinations = document.querySelector(
   "#affichage_liste_station_destinations"
 );
 const affichage_score = document.querySelector("#affichage_score");
+const affichage_reserve_de_charbon_totale = document.querySelector("#affichage_reserve_de_charbon_totale")
 const affichage_danger = document.querySelector("#affichage_danger");
 const affichage_ressources = document.querySelector("#affichage_ressources");
 const affichage_choix_passes = document.querySelector(
@@ -65,6 +66,7 @@ function update_affichage_joueur() {
   affichage_tour.innerHTML = jeu.tour.numero;
   affichage_station_actuelle.innerHTML = jeu._joueur._station_actuelle.nom;
   affichage_score.innerHTML = jeu._joueur.score;
+  affichage_reserve_de_charbon_totale.innerHTML=jeu._joueur._reserve_de_charbon_totale
   affichage_danger.innerHTML = jeu.joueur.danger;
   affichage_ressources.innerHTML = jeu._joueur.ressources;
   update_affichage_avantages();

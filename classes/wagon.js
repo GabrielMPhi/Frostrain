@@ -68,9 +68,7 @@ class Wagon {
         this._influence_du_joueur = e
     }
 
-    croissance_wagon (){
-        console.log(this._liste_population)
-        
+    croissance_wagon (){        
         //Économie
         this._ressources = this.adapter_ressources_wagon()
 
