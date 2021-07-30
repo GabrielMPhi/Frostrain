@@ -43,15 +43,20 @@ function update_affichage_liste_station_destinations() {
 
             let button_choisir_destionation = document.createElement("input");
             td_option_action.appendChild(button_choisir_destionation);
-            button_choisir_destionation.id = "btn_choisir_destination_" + jeu._monde._liste_des_stations.find(station => station._id === destination)._nom;
+            let station_actuelle = jeu._monde._liste_des_stations.find(station => station._id === destination)
+            button_choisir_destionation.id = "btn_choisir_destination_" + station_actuelle._nom;
             button_choisir_destionation.type = "button";
             button_choisir_destionation.className = "button is-small is-success";
             button_choisir_destionation.value = "En route! All aboard!";
             button_choisir_destionation.addEventListener("click", () => {
                 jeu.joueur.score+=5
                 jeu.joueur.danger+=5
+                jeu._joueur.changement_station(station_actuelle)
+                function_passer_tour_simple();
                 update_affichage_joueur();
                 update_affichage_wagon();
+
+                
               });
 
   

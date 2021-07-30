@@ -49,6 +49,11 @@ class Joueur {
     }
 
 
+    changement_station(nouvelle_station){
+        console.log("Changement_station")
+        this._station_actuelle = jeu._monde._liste_des_stations.find(station => station._id === nouvelle_station._id)
+    }
+
     changementTour(observe){
         
         
