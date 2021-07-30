@@ -9,7 +9,7 @@ class Joueur {
         this._liste_avantages=liste_avantages
         this._stabilite_train = 100
         this._wagons_du_train = liste_wagons
-        this._reserve_de_charbon_totale = 10
+        this._reserve_de_charbon_totale = 100
 
     }
 
@@ -50,7 +50,6 @@ class Joueur {
 
 
     changement_station(nouvelle_station){
-        console.log("Changement_station")
         this._station_actuelle = jeu._monde._liste_des_stations.find(station => station._id === nouvelle_station._id)
     }
 
@@ -64,17 +63,13 @@ class Joueur {
         for (let i = 0; i < this._wagons_du_train.length; i++) {
             this._wagons_du_train[i].croissance_wagon()
 
-          }
+        }
 
-        
-        
-        if (this._ressources <= 0){
-            this._influence-=1
+        // avantages
+        for (let i = 0; i < this._liste_avantages.length; i++) {
+            this._liste_avantages[i].utilisation_effets()
+
         }
-        if (this.influence<=0){
-            this.score-=1
-        }
-            this.influence+=1
-        }
+    }
 
 }

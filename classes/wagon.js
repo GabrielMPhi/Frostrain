@@ -86,8 +86,6 @@ class Wagon {
             jeu._joueur._ressources+= parseInt((this._influence_du_joueur*(this._corruption/10)),10)
             let jet_de_hasard_etre_pris_pour_corruption = getRandomInt(100)
             let chance_detre_pris = parseInt(((100-this._corruption)/10), 10)+this._influence_du_joueur
-            console.log("Jet = " + jet_de_hasard_etre_pris_pour_corruption)
-            console.log("Score à battre = " + chance_detre_pris)
             if (jet_de_hasard_etre_pris_pour_corruption<=chance_detre_pris){
                 jeu.joueur._danger+=1
             }

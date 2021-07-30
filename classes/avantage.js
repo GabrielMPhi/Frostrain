@@ -43,7 +43,9 @@ class Avantage {
         this._actif = e
     }
 
-
+    utilisation_effets(){
+        this._effet()
+    }
 
 
 
