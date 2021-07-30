@@ -2,7 +2,12 @@ const image_modal_choix_dilemme = document.querySelector(
   "#image_modal_choix_dilemme"
 );
 const affichage_tour = document.querySelector("#affichage_tour");
-const affichage_station_actuelle = document.querySelector("#affichage_station_actuelle")
+const affichage_station_actuelle = document.querySelector(
+  "#affichage_station_actuelle"
+);
+const affichage_liste_station_destinations = document.querySelector(
+  "#affichage_liste_station_destinations"
+);
 const affichage_score = document.querySelector("#affichage_score");
 const affichage_danger = document.querySelector("#affichage_danger");
 const affichage_ressources = document.querySelector("#affichage_ressources");
@@ -24,13 +29,13 @@ modal_option2.addEventListener("click", () => {
   ajouter_dans_listeobservateur_tour(jeu.dilemme_du_tour_objet.choix_2);
 });
 
-const btn_passer_tour_simple = document.querySelector("#btn_passer_tour_simple");
+const btn_passer_tour_simple = document.querySelector(
+  "#btn_passer_tour_simple"
+);
 
 btn_passer_tour_simple.addEventListener("click", () => {
-  function_passer_tour_simple()
+  function_passer_tour_simple();
 });
-
-
 
 const btn_affichage_wagons = document.querySelector("#btn_affichage_wagons");
 const div_affichage_pays = document.querySelector("#div_affichage_pays");
@@ -43,8 +48,10 @@ btn_affichage_wagons.addEventListener("click", () => {
   }
 });
 
-const affichage_avantages = document.querySelector("#div_affichage_avantages")
-const btn_affichage_avantages = document.querySelector("#btn_affichage_avantages")
+const affichage_avantages = document.querySelector("#div_affichage_avantages");
+const btn_affichage_avantages = document.querySelector(
+  "#btn_affichage_avantages"
+);
 
 btn_affichage_avantages.addEventListener("click", () => {
   if (affichage_avantages.classList.contains("is-hidden")) {
@@ -54,16 +61,15 @@ btn_affichage_avantages.addEventListener("click", () => {
   }
 });
 
-
-
 function update_affichage_joueur() {
   affichage_tour.innerHTML = jeu.tour.numero;
-  affichage_station_actuelle.innerHTML = jeu._joueur._station_actuelle.nom
+  affichage_station_actuelle.innerHTML = jeu._joueur._station_actuelle.nom;
   affichage_score.innerHTML = jeu._joueur.score;
   affichage_danger.innerHTML = jeu.joueur.danger;
   affichage_ressources.innerHTML = jeu._joueur.ressources;
-  update_affichage_avantages()
+  update_affichage_avantages();
   image_modal_choix_dilemme.src = choix_random_image();
+  update_affichage_liste_station_destinations()
 }
 
 function choix_random_image() {
@@ -120,8 +126,7 @@ function update_liste_choix() {
   }
 }
 
-
-function function_passer_tour_simple(){
+function function_passer_tour_simple() {
   jeu.tour.augmenter();
   update_liste_choix();
   update_affichage_joueur();

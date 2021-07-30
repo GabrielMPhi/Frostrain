@@ -57,3 +57,5 @@ function update_affichage_avantages() {
     }
   
   }
+
+
