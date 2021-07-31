@@ -71,15 +71,25 @@ class Wagon {
     croissance_wagon (){        
         //Économie
         this._ressources = this.adapter_ressources_wagon()
-
+        console.log(this._liste_population)
         if (this._influence_du_joueur > 0 && this._infrastructure <100){
-            this._infrastructure+=1
-            this._influence_du_joueur-=1
-            let index_perso_wagon_random = getRandomInt(this._liste_population.length)
-            this._liste_population[index_perso_wagon_random].richesse-=2
-
+            let liste_population_assez_riche_pour_reparer = [];
+            for (let i = 0; i < this._liste_population.length; i++){
+                if (this._liste_population[i].richesse >2){
+                    liste_population_assez_riche_pour_reparer.push(this._liste_population[i])
+                }
+            }
+            if(liste_population_assez_riche_pour_reparer !== undefined && liste_population_assez_riche_pour_reparer.length !== 0){ //pas mal fier de toute cette section. 
+                let index_perso_wagon_random = getRandomInt(liste_population_assez_riche_pour_reparer.length)
+                let index_perso_qui_paye_la_reparation = this._liste_population.findIndex(element => element === liste_population_assez_riche_pour_reparer[index_perso_wagon_random])
+                console.log(this._liste_population[index_perso_qui_paye_la_reparation].richesse)
+                this._liste_population[index_perso_qui_paye_la_reparation].richesse-=2
+                console.log(this._liste_population[index_perso_qui_paye_la_reparation].richesse)
+                this._infrastructure+=1
+                this._influence_du_joueur-=1
+            }
         }
-
+        this._ressources = this.adapter_ressources_wagon()
 
 
         // ajustements En faire une fonction plus générale et modulaire?

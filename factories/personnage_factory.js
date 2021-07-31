@@ -120,7 +120,7 @@ class PersonnageFactory{
 
 
     generer_richesse(){
-        return getRandomInt(10)
+        return getRandomInt(40)
     }
 
     verifier_surnom_genre_taille(genre, taille, surnom){
