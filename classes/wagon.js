@@ -72,34 +72,23 @@ class Wagon {
         //Économie
         this._ressources = this.adapter_ressources_wagon()
 
-        //Cout corruption
-        this._cout_corruption = parseInt(100-this._corruption) + parseInt((this._infrastructure/100),10)
-
-        if (this._influence_du_joueur > 0 && this._stabilite_wagon <100){
-            this._stabilite_wagon+=this._influence_du_joueur
-
-        }
-
-
-
-        if (this._influence_du_joueur > 0){
-            jeu._joueur._ressources+= parseInt((this._influence_du_joueur*(this._corruption/10)),10)
-            let jet_de_hasard_etre_pris_pour_corruption = getRandomInt(100)
-            let chance_detre_pris = parseInt(((100-this._corruption)/10), 10)+this._influence_du_joueur
-            if (jet_de_hasard_etre_pris_pour_corruption<=chance_detre_pris){
-                jeu.joueur._danger+=1
-            }
-
+        if (this._influence_du_joueur > 0 && this._infrastructure <100){
+            this._infrastructure+=1
+            this._influence_du_joueur-=1
+            let index_perso_wagon_random = getRandomInt(this._liste_population.length)
+            this._liste_population[index_perso_wagon_random].richesse-=2
 
         }
 
 
 
         // ajustements En faire une fonction plus générale et modulaire?
-        if (this._stabilite_wagon >100){
-            this._stabilite_wagon=100
+        if (this._infrastructure >100){
+            this._infrastructure=100
         }
-
+        if (this._influence_du_joueur <0){
+            this._influence_du_joueur=0
+        }
 
     } 
 
