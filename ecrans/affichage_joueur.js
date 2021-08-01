@@ -84,6 +84,7 @@ function update_affichage_station_actuelle() {
     button_acheter_charbon.addEventListener("click", () => {
         jeu._joueur._ressources-=10
         jeu._joueur._reserve_de_charbon_totale+=5
+        jeu._joueur._station_actuelle._reserve_de_charbon-=5
         update_affichage_joueur();
         update_affichage_wagon();
 

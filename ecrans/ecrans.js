@@ -43,19 +43,6 @@ btn_affichage_wagons.addEventListener("click", () => {
   }
 });
 
-const affichage_avantages = document.querySelector("#div_affichage_avantages");
-const btn_affichage_avantages = document.querySelector(
-  "#btn_affichage_avantages"
-);
-
-btn_affichage_avantages.addEventListener("click", () => {
-  if (affichage_avantages.classList.contains("is-hidden")) {
-    affichage_avantages.classList.remove("is-hidden");
-  } else {
-    affichage_avantages.classList.add("is-hidden");
-  }
-});
-
 function update_affichage_joueur() {
   affichage_tour.innerHTML = jeu.tour.numero;
   affichage_score.innerHTML = jeu._joueur.score;

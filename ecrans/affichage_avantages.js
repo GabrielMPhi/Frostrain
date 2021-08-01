@@ -1,3 +1,16 @@
+const affichage_avantages = document.querySelector("#div_affichage_avantages");
+const btn_affichage_avantages = document.querySelector(
+  "#btn_affichage_avantages"
+);
+
+btn_affichage_avantages.addEventListener("click", () => {
+  if (affichage_avantages.classList.contains("is-hidden")) {
+    affichage_avantages.classList.remove("is-hidden");
+  } else {
+    affichage_avantages.classList.add("is-hidden");
+  }
+});
+
 function update_affichage_avantages() {
     affichage_avantages.innerHTML = "";
     if (jeu.joueur.liste_avantages != []) {
@@ -12,7 +25,7 @@ function update_affichage_avantages() {
   
       jeu.joueur.liste_avantages.forEach((avantage) => {
         
-        if (avantage.actif == false){
+        if (avantage.actif == true){
           affichage_avantages.appendChild(affichage_tableau_avantages);
           let tbody_avantage = document.createElement("tbody");
           affichage_tableau_avantages.appendChild(tbody_avantage);
