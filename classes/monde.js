@@ -5,7 +5,10 @@ class Monde {
     }
 
     changementTour(observe){
-console.log("Ok")
+        for (let i = 0; i < this._liste_des_stations.length; i++) {
+            this._liste_des_stations[i].changement_de_tour_station()
+
+        }
 
 
 

@@ -2,12 +2,6 @@ const image_modal_choix_dilemme = document.querySelector(
   "#image_modal_choix_dilemme"
 );
 const affichage_tour = document.querySelector("#affichage_tour");
-const affichage_station_actuelle = document.querySelector(
-  "#affichage_station_actuelle"
-);
-const affichage_liste_station_destinations = document.querySelector(
-  "#affichage_liste_station_destinations"
-);
 const affichage_score = document.querySelector("#affichage_score");
 const affichage_reserve_de_charbon_totale = document.querySelector("#affichage_reserve_de_charbon_totale")
 const affichage_danger = document.querySelector("#affichage_danger");
@@ -64,11 +58,11 @@ btn_affichage_avantages.addEventListener("click", () => {
 
 function update_affichage_joueur() {
   affichage_tour.innerHTML = jeu.tour.numero;
-  affichage_station_actuelle.innerHTML = jeu._joueur._station_actuelle.nom;
   affichage_score.innerHTML = jeu._joueur.score;
   affichage_reserve_de_charbon_totale.innerHTML=jeu._joueur._reserve_de_charbon_totale
   affichage_danger.innerHTML = jeu.joueur.danger;
   affichage_ressources.innerHTML = jeu._joueur.ressources;
+  update_affichage_station_actuelle();
   update_affichage_avantages();
   image_modal_choix_dilemme.src = choix_random_image();
   update_affichage_liste_station_destinations()

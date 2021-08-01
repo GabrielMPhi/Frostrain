@@ -61,7 +61,7 @@ class Joueur {
 
         
         for (let i = 0; i < this._wagons_du_train.length; i++) {
-            this._wagons_du_train[i].croissance_wagon()
+            this._wagons_du_train[i].changement_dans_wagon()
 
         }
 

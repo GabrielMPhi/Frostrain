@@ -25,4 +25,11 @@ class Station {
     set nom(e){
         this._nom = e
     }
+
+    changement_de_tour_station(){
+        this._reserve_de_charbon+=1
+    }
+
+
+
 }

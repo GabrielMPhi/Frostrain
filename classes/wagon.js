@@ -10,10 +10,8 @@ class Wagon {
 
     // Éléments par défaut (donc pas besoin de l'ajouter dans la liste des wagon)
         this._stabilite_wagon = 100
-        this._taux_croissance_population = 0.04;
         this._taux_mortalite = 0.01;
         this._cout_corruption = 1
-        this._taux_croissance_economie = 0.05
         this._ressources = 100
 
         // ajouter territoire, taux de mortalité, etc.
@@ -68,10 +66,9 @@ class Wagon {
         this._influence_du_joueur = e
     }
 
-    croissance_wagon (){        
+    changement_dans_wagon (){        
         //Économie
         this._ressources = this.adapter_ressources_wagon()
-        console.log(this._liste_population)
         if (this._influence_du_joueur > 0 && this._infrastructure <100){
             let liste_population_assez_riche_pour_reparer = [];
             for (let i = 0; i < this._liste_population.length; i++){
@@ -82,9 +79,7 @@ class Wagon {
             if(liste_population_assez_riche_pour_reparer !== undefined && liste_population_assez_riche_pour_reparer.length !== 0){ //pas mal fier de toute cette section. 
                 let index_perso_wagon_random = getRandomInt(liste_population_assez_riche_pour_reparer.length)
                 let index_perso_qui_paye_la_reparation = this._liste_population.findIndex(element => element === liste_population_assez_riche_pour_reparer[index_perso_wagon_random])
-                console.log(this._liste_population[index_perso_qui_paye_la_reparation].richesse)
                 this._liste_population[index_perso_qui_paye_la_reparation].richesse-=2
-                console.log(this._liste_population[index_perso_qui_paye_la_reparation].richesse)
                 this._infrastructure+=1
                 this._influence_du_joueur-=1
             }
