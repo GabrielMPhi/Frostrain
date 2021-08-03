@@ -17,10 +17,12 @@ function update_affichage_station_actuelle() {
       affichage_station_actuelle_tableau.createTHead();
     let nom_station_actuelle = document.createElement("th");
     let population_station_actuelle = document.createElement("th");
+    let ressources_totale_station_actuelle = document.createElement("th");
     let reserve_charbon_station_actuelle = document.createElement("th");
     let action_station_actuelle = document.createElement("th");
     nom_station_actuelle.innerHTML = "Nom de la station";
     population_station_actuelle.innerHTML = "Population de la station"
+    ressources_totale_station_actuelle.innerHTML = "Ressources totale de la station"
     reserve_charbon_station_actuelle.innerHTML = "Réserve de charbon"
     action_station_actuelle.innerHTML = "Actions";
 
@@ -31,6 +33,10 @@ function update_affichage_station_actuelle() {
 
     affichage_station_actuelle_tableau.appendChild(
       population_station_actuelle
+    );
+
+    affichage_station_actuelle_tableau.appendChild(
+      ressources_totale_station_actuelle
     );
 
     affichage_station_actuelle_tableau.appendChild(
@@ -52,12 +58,14 @@ function update_affichage_station_actuelle() {
     tbody_station_actuelle.appendChild(tr_station_actuelle);
     let td_station_actuelle_nom = document.createElement("td");
     let td_station_actuelle_population = document.createElement("td");
+    let td_station_actuelle_ressources = document.createElement("td");
     let td_station_actuelle_reserve_charbon = document.createElement("td");
     let td_option_action = document.createElement("td");
 
 
     td_station_actuelle_nom.innerHTML = jeu._joueur._station_actuelle.nom
     td_station_actuelle_population.innerHTML = jeu._joueur._station_actuelle._liste_population.length
+    td_station_actuelle_ressources.innerHTML = jeu._joueur._station_actuelle._ressources_totale_de_population_station
     td_station_actuelle_reserve_charbon.innerHTML = jeu._joueur._station_actuelle._reserve_de_charbon
 
     affichage_station_actuelle_tableau.appendChild(
@@ -65,6 +73,10 @@ function update_affichage_station_actuelle() {
     );
     affichage_station_actuelle_tableau.appendChild(
       td_station_actuelle_population
+    );
+
+    affichage_station_actuelle_tableau.appendChild(
+      td_station_actuelle_ressources
     );
 
     affichage_station_actuelle_tableau.appendChild(
@@ -81,14 +93,15 @@ function update_affichage_station_actuelle() {
     button_acheter_charbon.type = "button";
     button_acheter_charbon.className = "button is-small is-success";
     button_acheter_charbon.value = "Acheter du charbon!";
+    
     button_acheter_charbon.addEventListener("click", () => {
-        jeu._joueur._ressources-=10
-        jeu._joueur._reserve_de_charbon_totale+=5
-        jeu._joueur._station_actuelle._reserve_de_charbon-=5
+      jeu._joueur._station_actuelle.achat_de_charbon()       
         update_affichage_joueur();
         update_affichage_wagon();
 
         
+
+
       });
       if (jeu._joueur._ressources <= 10){button_acheter_charbon.disabled = true}
 
