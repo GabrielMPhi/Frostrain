@@ -32,10 +32,10 @@ class Station {
 
     changement_de_tour_station(){
         this._reserve_de_charbon+=1
-        
+
         this.usure_et_froid_dans_station()
         this._ressources_totale_de_population_station = this.adapter_ressources_station()
-
+        this.le_plus_pauvre_de_la_station()
     }
     
     ajuster_variable_de_station(){
@@ -50,9 +50,13 @@ class Station {
           } 
         return ressources_station_calcul
     }
+
     usure_et_froid_dans_station(){
         for (let i = 0; i < this._liste_population.length; i++) {
             this._liste_population[i]._richesse-=1;
+            if (this._liste_population[i]._richesse <=0){
+                this._liste_population.splice(i,1)
+            }
           } 
     }
 
@@ -62,6 +66,18 @@ class Station {
         this._liste_population[getRandomInt(this._liste_population.length)].richesse+=this._prix_du_charbon
         this._reserve_de_charbon-=5
         this._ressources_totale_de_population_station = this.adapter_ressources_station()
+    }
+
+    le_plus_pauvre_de_la_station(){
+        let le_plus_pauvre_de_la_station
+        let liste_de_la_population_temporaire_classe_du_plus_pauvre = this._liste_population  // explorer la question de "par valeur" ou "par référence", parce qu'ici, ça modifie la liste de l'objet (this.)
+
+        liste_de_la_population_temporaire_classe_du_plus_pauvre.sort((a, b) => {
+            return a._richesse - b._richesse;
+        })
+        le_plus_pauvre_de_la_station = liste_de_la_population_temporaire_classe_du_plus_pauvre[0]
+        this._liste_population.findIndex(element => element === le_plus_pauvre_de_la_station)
+        //return le_plus_pauvre_de_la_station
     }
 
 }

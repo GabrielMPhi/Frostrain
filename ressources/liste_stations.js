@@ -12,5 +12,6 @@ let liste_des_stations = [montreal_station,london_station,utrecht_station,vilniu
 
 let index_montreal_station = liste_des_stations.findIndex(x => x.id === "montreal_station")
 let index_london_station = liste_des_stations.findIndex(x => x.id === "london_station")
+let index_utrecht_station = liste_des_stations.findIndex(x => x.id === "utrecht_station")
 let index_vilnius_station = liste_des_stations.findIndex(x => x.id === "vilnius_station")
 let index_moscow_station = liste_des_stations.findIndex(x => x.id === "moscow_station")

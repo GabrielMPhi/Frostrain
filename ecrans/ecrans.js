@@ -49,6 +49,7 @@ function update_affichage_joueur() {
   affichage_reserve_de_charbon_totale.innerHTML=jeu._joueur._reserve_de_charbon_totale
   affichage_danger.innerHTML = jeu.joueur.danger;
   affichage_ressources.innerHTML = jeu._joueur.ressources;
+  update_affichage_population_station_actuelle()
   update_affichage_station_actuelle();
   update_affichage_avantages();
   image_modal_choix_dilemme.src = choix_random_image();
