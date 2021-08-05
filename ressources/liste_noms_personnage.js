@@ -79,7 +79,20 @@ let noms_famille_personnages = [
     "Jorkunite", 
     "Oloye",
     "Zemova",
-    "Stratis"]
+    "Stratis",
+    "Milord",
+    "Borst",
+    "Fradet",
+    "Geloso",
+    "Duhamel",
+    "Brennan",
+    "Cloutier",
+    "Valois",
+    "Anctil",
+    "Dugal",
+    "Fike",
+    "Hudon",
+    "Lamoureux"]
 
 let liste_genre = [
     "Homme", 

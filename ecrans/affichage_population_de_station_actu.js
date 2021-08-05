@@ -2,6 +2,17 @@ const affichage_population_station_actuelle = document.querySelector(
   "#affichage_population_station_actuelle"
 );
 
+
+const btn_affichage_population_station_actuelle = document.querySelector("#btn_affichage_population_station_actuelle")
+
+btn_affichage_population_station_actuelle.addEventListener("click", () => {
+  if (affichage_population_station_actuelle.classList.contains("is-hidden")) {
+    affichage_population_station_actuelle.classList.remove("is-hidden");
+  } else {
+    affichage_population_station_actuelle.classList.add("is-hidden");
+  };
+});
+
 function update_affichage_population_station_actuelle() {
   affichage_population_station_actuelle.innerHTML = "";
 

@@ -6,8 +6,6 @@ const affichage_liste_station_destinations = document.querySelector(
 );
 
 
-
-
 function update_affichage_station_actuelle() {
   affichage_station_actuelle.innerHTML = "";
 
