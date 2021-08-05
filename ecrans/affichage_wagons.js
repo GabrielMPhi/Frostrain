@@ -55,16 +55,16 @@ function update_affichage_wagon() {
         let td_btn_actions = document.createElement("td");
         affichage_tableau_wagon.appendChild(td_btn_actions);
   
-        if (jeu.joueur.ressources >= wagon.cout_corruption) {
+        if (jeu.joueur.ressources >= wagon.cout_influence) {
           let button_influence = document.createElement("input");
           td_btn_actions.appendChild(button_influence);
           button_influence.id = "btnInfluence_pays_" + wagon.nom;
           button_influence.type = "button";
           button_influence.className = "button is-small is-success";
-          button_influence.value = `+Influence. Cout : ${wagon.cout_corruption}`;
+          button_influence.value = `+Influence. Cout : ${wagon.cout_influence}`;
           button_influence.addEventListener("click", () => {
             wagon.influence_du_joueur += 1;
-            jeu._joueur.ressources -= wagon.cout_corruption;
+            jeu._joueur.ressources -= wagon.cout_influence;
             fermer_bouton_action(button_influence.id);
           });
         }
@@ -78,12 +78,12 @@ function update_affichage_wagon() {
           button_influence_pour_richesse.value = "Influence pour richesse";
           button_influence_pour_richesse.addEventListener("click", () => {
             wagon.influence_du_joueur -= 1;
-            jeu._joueur.ressources += parseInt((wagon.cout_corruption/2),10);
+            jeu._joueur.ressources += parseInt((wagon.cout_influence/2),10);
             fermer_bouton_action(button_influence_pour_richesse.id);
           });
         }
   
-        if (wagon._influence_du_joueur >= 10 && jeu._joueur._ressources >= parseInt((wagon.cout_corruption),10)) {
+        if (wagon._influence_du_joueur >= 10 && jeu._joueur._ressources >= parseInt((wagon.cout_influence),10)) {
           let button_influence_pour_corruption = document.createElement("input");
           td_btn_actions.appendChild(button_influence_pour_corruption);
           button_influence_pour_corruption.id = "btnInfluence_pour_corruption_pays_" + wagon.nom;
@@ -93,7 +93,7 @@ function update_affichage_wagon() {
           button_influence_pour_corruption.addEventListener("click", () => {
             wagon._corruption +=1
             wagon.influence_du_joueur -= 10;
-            jeu._joueur.ressources += parseInt((wagon.cout_corruption),10);
+            jeu._joueur.ressources += parseInt((wagon.cout_influence),10);
             fermer_bouton_action(button_influence_pour_corruption.id);
           });
         }

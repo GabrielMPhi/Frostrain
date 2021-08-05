@@ -11,7 +11,7 @@ class Wagon {
     // Éléments par défaut (donc pas besoin de l'ajouter dans la liste des wagon)
         this._stabilite_wagon = 100
         this._taux_mortalite = 0.01;
-        this._cout_corruption = 1
+        this._cout_influence = 1
         this._ressources = 100
 
         // ajouter territoire, taux de mortalité, etc.
@@ -52,11 +52,11 @@ class Wagon {
         this._corruption = e
     }
 
-    get cout_corruption (){
-        return this._cout_corruption
+    get cout_influence (){
+        return this._cout_influence
     }
-    set cout_corruption(e){
-        this._cout_corruption = e
+    set cout_influence(e){
+        this._cout_influence = e
     }
 
     get influence_du_joueur (){
@@ -68,6 +68,9 @@ class Wagon {
 
     changement_dans_wagon (){        
         //Économie
+
+        this._cout_influence = parseInt(100-this._corruption) + parseInt((this._liste_population.length),10) + this._cout_influence
+
         this._ressources = this.adapter_ressources_wagon()
         let liste_population_assez_riche_pour_reparer = [];
         if (this._influence_du_joueur > 0 && this._infrastructure <100){
