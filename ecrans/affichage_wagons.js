@@ -79,7 +79,9 @@ function update_affichage_wagon() {
           button_influence_pour_richesse.addEventListener("click", () => {
             wagon.influence_du_joueur -= 1;
             jeu._joueur.ressources += parseInt((wagon.cout_influence/2),10);
+            wagon.appauvrissement_au_hasard_dans_wagon(parseInt((wagon.cout_influence/2),10))
             fermer_bouton_action(button_influence_pour_richesse.id);
+            update_affichage_population_par_wagon()
           });
         }
   
@@ -95,6 +97,7 @@ function update_affichage_wagon() {
             wagon.influence_du_joueur -= 10;
             jeu._joueur.ressources += parseInt((wagon.cout_influence),10);
             fermer_bouton_action(button_influence_pour_corruption.id);
+            update_affichage_population_par_wagon()
           });
         }
   

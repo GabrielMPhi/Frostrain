@@ -19,7 +19,8 @@ const btn_affichage_population_par_wagon = document.querySelector("#btn_affichag
     jeu.joueur._wagons_du_train.forEach((wagon) => {
 
     if (wagon._liste_population != []) {
-        let affichage_nom_wagon = document.createElement("h1");
+        let affichage_nom_wagon = document.createElement("h2");
+        affichage_nom_wagon.classList.add("subtitle")
         affichage_nom_wagon.innerHTML = wagon.nom
         affichage_population_par_wagon.appendChild(
             affichage_nom_wagon

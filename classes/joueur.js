@@ -48,7 +48,6 @@ class Joueur {
         this._liste_avantages = e
     }
 
-
     changement_station(nouvelle_station){
         this._station_actuelle = jeu._monde._liste_des_stations.find(station => station._id === nouvelle_station._id)
     }

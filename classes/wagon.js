@@ -66,7 +66,34 @@ class Wagon {
         this._influence_du_joueur = e
     }
 
-    changement_dans_wagon (){        
+    enrichissement_au_hasard_dans_wagon(nombre){
+        for(let i=0; i<nombre; i++){
+          let chanceux = Math.floor(Math.random() * this._liste_population.length);
+          this._liste_population[chanceux].richesse++;    
+        }
+      }
+
+      appauvrissement_au_hasard_dans_wagon(nombre){
+        for(let i=0; i<nombre; i++){
+          let chanceux = Math.floor(Math.random() * this._liste_population.length);
+          this._liste_population[chanceux].richesse--;    
+        }
+      }
+
+      usure_et_froid_dans_le_wagon(){
+        for (let i = 0; i < this._liste_population.length; i++) {
+            if (this._liste_population[i]._richesse <=0){
+                this._liste_population.splice(i,1)
+            }
+          } 
+    }
+
+
+    changement_dans_wagon (){   
+        
+        // usure
+        this.usure_et_froid_dans_le_wagon()
+
         //Économie
 
         this._cout_influence = parseInt(100-this._corruption) + parseInt((this._liste_population.length),10) + this._cout_influence
