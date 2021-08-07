@@ -52,6 +52,7 @@ function update_affichage_joueur() {
   update_affichage_population_station_actuelle()
   update_affichage_station_actuelle();
   update_affichage_avantages();
+  update_affichage_population_par_wagon()
   image_modal_choix_dilemme.src = choix_random_image();
   update_affichage_liste_station_destinations()
 }
@@ -61,8 +62,6 @@ function choix_random_image() {
     Math.floor(Math.random() * liste_random_image.length)
   ];
 }
-
-const affichage_action_btn = document.querySelector("#modal_btn");
 
 set_bulma_modal(
   "modal_intro",
@@ -75,7 +74,7 @@ set_bulma_modal(
 );
 set_bulma_modal(
   "modal_choix",
-  ["modal_btn"],
+  [],
   ["modal_btn_close", "btn_option1", "btn_option2", "modal_background"]
 );
 

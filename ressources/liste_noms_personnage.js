@@ -43,12 +43,16 @@ let liste_prenoms_habitant_femme = [
     "Louise", 
     "Gabriella",
     "Joanie",
-    "Valérie"
+    "Valérie",
+    "Irina",
+    "Larisa",
+    "Karolina"
 ];
 
 let noms_famille_personnages = [
     "Monette", 
-    "Ducharme", 
+    "Ducharme",
+    "Liesmith",
     "Carel", 
     "Dax", 
     "Rideout", 

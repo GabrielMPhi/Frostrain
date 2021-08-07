@@ -158,7 +158,12 @@ function update_affichage_liste_station_destinations() {
             button_choisir_destionation.className = "button is-small is-success";
             button_choisir_destionation.value = "En route! All aboard!";
             button_choisir_destionation.addEventListener("click", () => {
+              document.getElementById("modal_choix").classList.add("is-active");
+            })
+            button_choisir_destionation.addEventListener("click", () => {
                 jeu._joueur.changement_station(station_actuelle)
+                changement_de_tour_affichage()
+
                 function_passer_tour_simple();
                 update_affichage_joueur();
                 update_affichage_wagon();

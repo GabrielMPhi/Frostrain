@@ -31,11 +31,16 @@
             />
           </figure>
           <div id="affichage_population_station_actuelle"></div>
+          <div class="is-hidden" id="affichage_population_par_wagon"></div>
         </div>
         <div class="column is-two-thirds">
           <div class="content">
-            <button type="button" class="button is-success" id="modal_btn">
-              Attendre le prochain dilemme!
+            <button
+              type="button"
+              class="button is-success"
+              id="btn_affichage_population_par_wagon"
+            >
+              Population train
             </button>
 
             <button
@@ -211,6 +216,10 @@
   <script
     type="text/javascript"
     src="ecrans/affichage_population_de_station_actu.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="ecrans/affichage_population_par_wagon.js"
   ></script>
   <script type="text/javascript" src="classes/tour.js"></script>
   <script type="text/javascript" src="classes/joueur.js"></script>

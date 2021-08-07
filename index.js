@@ -1,13 +1,13 @@
 window.addEventListener('load',
 function(){
-	initialisation_dilemme();
+	initialisation_jeu();
 	ajouter_les_observateurs();
 	jeu.tour.augmenter();
 	update_affichage_joueur();
 	modal_intro.classList.add("is-active")
 })
 
-function initialisation_dilemme(){
+function initialisation_jeu(){
 	let liste_des_agents = creer_liste_personnage(4)
 	jeu = new Jeu(0, liste_des_wagons, liste_des_agents, liste_avantages, liste_des_stations)
 	console.log(jeu._monde._liste_des_stations)
@@ -21,7 +21,7 @@ function ajouter_les_observateurs(){
 	ajouter_dans_listeobservateur_tour(jeu._joueur)
 }
 
-affichage_action_btn.onclick = function changement_de_tour_affichage(){
+function changement_de_tour_affichage(){
 	console.log("DILEMME!!!")
     let dilemme_fabrique_du_tour = selection_des_choix()
 	jeu.dilemme_du_tour_objet = dilemme_fabrique_du_tour()
@@ -31,7 +31,7 @@ affichage_action_btn.onclick = function changement_de_tour_affichage(){
 	update_affichage_joueur()
 	update_liste_choix()
 	update_affichage_wagon()
-} 
+}
 
 
 function selection_des_choix(){
