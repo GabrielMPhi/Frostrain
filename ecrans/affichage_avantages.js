@@ -44,13 +44,14 @@ function update_affichage_avantages() {
             button_vendre_avantage.id = "btn_vendre_avantage_" + avantage.nom;
             button_vendre_avantage.type = "button";
             button_vendre_avantage.className = "button is-small is-success";
-            button_vendre_avantage.value = "Vendre";
+            button_vendre_avantage.value = "Abolir";
             button_vendre_avantage.disabled = true;
             button_vendre_avantage.addEventListener("click", () => {
                 jeu.joueur.ressources+=100
                 jeu.joueur.danger+=5
+                eliminer_x_de_liste_y(avantage, jeu.joueur._liste_avantages)
                 update_affichage_joueur();
-                update_affichage_pays();
+                update_affichage_wagon();
                 disableButtons(button_vendre_avantage)
               });
 

@@ -50,3 +50,9 @@ function prendre_x_personnages_de_liste(liste, nombre_a_prendre){
 	}
 	return liste_de_personnage_selectionnes
 }
+
+function eliminer_x_de_liste_y(avantage, liste){
+	let index_avantage_a_enlever = liste.findIndex(x => x === avantage)
+	console.log(index_avantage_a_enlever)
+	liste.splice(index_avantage_a_enlever,1)
+	}

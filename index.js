@@ -10,10 +10,7 @@ function(){
 function initialisation_jeu(){
 	let liste_des_agents = creer_liste_personnage(4)
 	jeu = new Jeu(0, liste_des_wagons, liste_des_agents, liste_avantages, liste_des_stations)
-	console.log(jeu._monde._liste_des_stations)
 	jeu._joueur._station_actuelle = jeu._monde._liste_des_stations[index_montreal_station]
-	console.log(jeu._joueur)
-	console.log(jeu._monde)
 	update_affichage_wagon()
 }
 function ajouter_les_observateurs(){
@@ -22,7 +19,6 @@ function ajouter_les_observateurs(){
 }
 
 function changement_de_tour_affichage(){
-	console.log("DILEMME!!!")
     let dilemme_fabrique_du_tour = selection_des_choix()
 	jeu.dilemme_du_tour_objet = dilemme_fabrique_du_tour()
     affichage_choix_a_faire_texte.innerHTML = jeu.dilemme_du_tour_objet.texte

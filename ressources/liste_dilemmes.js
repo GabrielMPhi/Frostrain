@@ -35,15 +35,38 @@ function methode_dilemme_economiser() {
 }
 
 
+function methode_accelerer (){
+    jeu.joueur._reserve_de_charbon_totale-= jeu.joueur._wagons_du_train.length
+    jeu.joueur.danger+=5
+    jeu.joueur.score+-5
+    jeu.joueur._wagons_du_train[getRandomInt(jeu.joueur._wagons_du_train.length)-=5]
+}
+
+function methode_ralentir (){
+    jeu.joueur._reserve_de_charbon_totale+= jeu.joueur._wagons_du_train.length
+    jeu.joueur.score-=5
+    jeu.joueur.danger-=1
+}
+
+
 // Liste des événements du départ
 
 let dilemme1 = function() { return factory_dilemme.getDilemme(
     {
         texte : "Il y a une fête dans un wagon. Que doit-on faire? <b>Contribuer pour les préparatifs et risquer d'utiliser de précieuses ressources</b> ou bien <b>économiser des ressources</b>?",
         choix_1 : {nom_choix: "Contribuer à la fête", effet: methode_dilemme_contribuer_a_fete, delai: 2, repetition:false},
-        choix_2 : {nom_choix: "Économiser", effet: methode_dilemme_economiser, delai: 3, repetition:true}
+        choix_2 : {nom_choix: "Économiser", effet: methode_dilemme_economiser, delai: 3, repetition:false}
     }
 )}
+
+let tempete_dilemme = function() { return factory_dilemme.getDilemme(
+    {
+        texte : "Il y a une tempête. Vaut-il mieux accélérer et dépenser plus de charbon pour en sortir plus vite ou ralentir, épargner du charbon, mais minimiser les risques de dommages à l'infrastructure?",
+        choix_1 : {nom_choix: "Accélérer", effet: methode_accelerer, delai: 1, repetition:false},
+        choix_2 : {nom_choix: "Ralentir", effet: methode_ralentir, delai: 1, repetition:false}
+    }
+)}
+
 
 let dilemme_philosophique_1 = function() { return factory_dilemme.getDilemme(
     {
@@ -55,5 +78,5 @@ let dilemme_philosophique_1 = function() { return factory_dilemme.getDilemme(
 
 //liste_des_choix.push(dilemme1)
 
-liste_des_choix.push(dilemme1, dilemme_philosophique_1)
+liste_des_choix.push(dilemme1, dilemme_philosophique_1, tempete_dilemme)
 

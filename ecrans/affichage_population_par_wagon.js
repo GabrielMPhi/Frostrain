@@ -39,7 +39,7 @@ const btn_affichage_population_par_wagon = document.querySelector("#btn_affichag
       prenom_habitation_wagon.innerHTML = "Prenom"
       nom_habitation_wagon.innerHTML = "Nom";
       ressources_habitation_wagon.innerHTML =
-        "Population de la station";
+        "Ressources";
       action_population_wagon.innerHTML = "Actions";
   
       affichage_population_par_wagon_actuelle_tableau.appendChild(

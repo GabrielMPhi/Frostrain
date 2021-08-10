@@ -31,8 +31,8 @@ function update_affichage_wagon() {
           .appendChild(affichage_tableau_wagon);
         let tbody_wagon = document.createElement("tbody");
         affichage_tableau_wagon.appendChild(tbody_wagon);
-        let tr_pays = document.createElement("tr");
-        tbody_wagon.appendChild(tr_pays);
+        let tr_wagon = document.createElement("tr");
+        tbody_wagon.appendChild(tr_wagon);
         let td_wagon_nom = document.createElement("td");
         let td_wagon_population = document.createElement("td");
         let td_wagon_ressources = document.createElement("td")

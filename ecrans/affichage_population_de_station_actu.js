@@ -30,7 +30,7 @@ function update_affichage_population_station_actuelle() {
     prenom_habitation_station_actuelle.innerHTML = "Prenom"
     nom_habitation_station_actuelle.innerHTML = "Nom";
     ressources_habitation_station_actuelle.innerHTML =
-      "Population de la station";
+      "Ressources";
     action_population_station_actuelle.innerHTML = "Actions";
 
     affichage_affichage_population_station_actuelle_tableau.appendChild(
