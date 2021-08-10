@@ -117,11 +117,16 @@ function update_affichage_liste_station_destinations() {
         affichage_liste_station_destinations.appendChild(affichage_liste_option_station_destinations)
       affichage_liste_option_station_destinations.createTHead();
       let nom_option_destination = document.createElement("th");
+      let distance_option_destination = document.createElement("th");
       let action_option_destination = document.createElement("th");
       nom_option_destination.innerHTML = "Nom de la potentielle destination";
+      distance_option_destination.innerHTML = "Distance";
       action_option_destination.innerHTML = "En route";
       affichage_liste_option_station_destinations.appendChild(
         nom_option_destination
+      );
+      affichage_liste_option_station_destinations.appendChild(
+        distance_option_destination
       );
       affichage_liste_option_station_destinations.appendChild(
         action_option_destination
@@ -139,11 +144,16 @@ function update_affichage_liste_station_destinations() {
           let tr_option = document.createElement("tr");
           tbody_options_destinations.appendChild(tr_option);
           let td_option_nom = document.createElement("td");
-          td_option_nom.innerHTML = jeu._monde._liste_des_stations.find(station => station._id === destination)._nom;
-  
+          let td_option_distance = document.createElement("td");
           let td_option_action = document.createElement("td");
+          td_option_nom.innerHTML = jeu._monde._liste_des_stations.find(station => station._id === destination.destination_id)._nom;
+          td_option_distance.innerHTML = destination.distance;
+
           affichage_liste_option_station_destinations.appendChild(
             td_option_nom
+          );
+          affichage_liste_option_station_destinations.appendChild(
+            td_option_distance
           );
           affichage_liste_option_station_destinations.appendChild(
             td_option_action
@@ -152,7 +162,7 @@ function update_affichage_liste_station_destinations() {
 
             let button_choisir_destionation = document.createElement("input");
             td_option_action.appendChild(button_choisir_destionation);
-            let station_actuelle = jeu._monde._liste_des_stations.find(station => station._id === destination)
+            let station_actuelle = jeu._monde._liste_des_stations.find(station => station._id === destination.destination_id)
             button_choisir_destionation.id = "btn_choisir_destination_" + station_actuelle._nom;
             button_choisir_destionation.type = "button";
             button_choisir_destionation.className = "button is-small is-success";
@@ -161,10 +171,13 @@ function update_affichage_liste_station_destinations() {
               document.getElementById("modal_choix").classList.add("is-active");
             })
             button_choisir_destionation.addEventListener("click", () => {
-                jeu._joueur.changement_station(station_actuelle)
+              for (let i = 0; i < destination.distance-1; i++){ // le -1, c'est parce que le dilemme fait passer un tour
+                jeu.tour.augmenter();
+              }
+              
+              jeu._joueur.changement_station(station_actuelle)
                 changement_de_tour_affichage()
 
-                function_passer_tour_simple();
                 update_affichage_joueur();
                 update_affichage_wagon();
 

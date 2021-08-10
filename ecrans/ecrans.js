@@ -133,3 +133,14 @@ modal_option2.onclick = function changement_de_tour_modal() {
   update_liste_choix();
   update_affichage_joueur();
 };
+
+function changement_de_tour_affichage(){
+  let dilemme_fabrique_du_tour = selection_des_choix()
+jeu.dilemme_du_tour_objet = dilemme_fabrique_du_tour()
+  affichage_choix_a_faire_texte.innerHTML = jeu.dilemme_du_tour_objet.texte
+modal_option1.innerHTML = jeu.dilemme_du_tour_objet.choix_1.nom_choix
+modal_option2.innerHTML = jeu.dilemme_du_tour_objet.choix_2.nom_choix
+update_affichage_joueur()
+update_liste_choix()
+update_affichage_wagon()
+}
