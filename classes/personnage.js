@@ -17,6 +17,14 @@ class Personnage {
       this._richesse = richesse;
     }
   
+    get genre() {
+      return this._genre;
+    }
+  
+    set genre(e) {
+      this._genre = e;
+    }
+
     get nom() {
       return this._nom;
     }

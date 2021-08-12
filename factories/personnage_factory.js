@@ -20,7 +20,15 @@ class PersonnageFactory{
 //        return new Personnage(genre, nom, prenom, surnom, age, taille, richesse)
 
     generer_genre (){
-        var choix_genre = ressources.liste_genre[Math.floor(Math.random() * ressources.liste_genre.length)]
+        let choix_genre
+        let random_100 = Math.floor(Math.random() * 100)
+        if (random_100 <= 48){
+            choix_genre = "Femme"
+        } else if (random_100 >= 93){
+            choix_genre = "Non-binaire"
+        } else {
+            choix_genre = "Homme"
+        }
         return choix_genre
     }
 

@@ -19,9 +19,6 @@ function update_affichage_population_station_actuelle() {
   if (jeu.joueur._station_actuelle != []) {
     let affichage_affichage_population_station_actuelle_tableau =
       document.createElement("table");
-    affichage_population_station_actuelle.appendChild(
-      affichage_affichage_population_station_actuelle_tableau
-    );
     affichage_affichage_population_station_actuelle_tableau.createTHead();
     let prenom_habitation_station_actuelle = document.createElement("th");
     let nom_habitation_station_actuelle = document.createElement("th");
@@ -32,6 +29,11 @@ function update_affichage_population_station_actuelle() {
     ressources_habitation_station_actuelle.innerHTML =
       "Ressources";
     action_population_station_actuelle.innerHTML = "Actions";
+
+
+    affichage_population_station_actuelle.appendChild(
+      affichage_affichage_population_station_actuelle_tableau
+    );
 
     affichage_affichage_population_station_actuelle_tableau.appendChild(
       prenom_habitation_station_actuelle
@@ -61,15 +63,11 @@ function update_affichage_population_station_actuelle() {
       return 0;
     });
     jeu.joueur._station_actuelle._liste_population.forEach((habitant) => {
-      affichage_population_station_actuelle.appendChild(
-        affichage_affichage_population_station_actuelle_tableau
-      );
       let tbody_habitant_station_actuelle = document.createElement("tbody");
       affichage_affichage_population_station_actuelle_tableau.appendChild(
         tbody_habitant_station_actuelle
       );
       let tr_habitant_station_actuelle = document.createElement("tr");
-      tbody_habitant_station_actuelle.appendChild(tr_habitant_station_actuelle);
       let td_habitant_station_actuelle_prenom = document.createElement("td");
       let td_habitant_station_actuelle_nom = document.createElement("td");
       let td_habitant_station_actuelle_richesse = document.createElement("td");
@@ -80,17 +78,22 @@ function update_affichage_population_station_actuelle() {
       td_habitant_station_actuelle_nom.innerHTML = habitant.nom;
       td_habitant_station_actuelle_richesse.innerHTML = habitant.richesse;
 
-      affichage_affichage_population_station_actuelle_tableau.appendChild(
+      affichage_population_station_actuelle.appendChild(
+        tbody_habitant_station_actuelle
+      );
+      tbody_habitant_station_actuelle.appendChild(tr_habitant_station_actuelle);
+
+      tr_habitant_station_actuelle.appendChild(
         td_habitant_station_actuelle_prenom
       );
-      affichage_affichage_population_station_actuelle_tableau.appendChild(
+      tr_habitant_station_actuelle.appendChild(
         td_habitant_station_actuelle_nom
       );
-      affichage_affichage_population_station_actuelle_tableau.appendChild(
+      tr_habitant_station_actuelle.appendChild(
         td_habitant_station_actuelle_richesse
       );
 
-      affichage_affichage_population_station_actuelle_tableau.appendChild(
+      tr_habitant_station_actuelle.appendChild(
         td_option_action
       );
     });

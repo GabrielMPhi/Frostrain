@@ -32,9 +32,8 @@ function update_affichage_avantages() {
           let tr_avantage = document.createElement("tr");
           tbody_avantage.appendChild(tr_avantage);
           let td_avantage_nom = document.createElement("td");
-          td_avantage_nom.innerHTML=avantage.nom
-          
           let td_avantage_action = document.createElement("td");
+          td_avantage_nom.innerHTML=avantage.nom
           affichage_tableau_avantages.appendChild(td_avantage_nom)
           affichage_tableau_avantages.appendChild(td_avantage_action)
 

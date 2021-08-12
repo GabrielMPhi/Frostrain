@@ -78,6 +78,12 @@ set_bulma_modal(
   ["modal_btn_close", "btn_option1", "btn_option2", "modal_background"]
 );
 
+set_bulma_modal(
+  "modal_desription_perso",
+  [],
+  ["modal_desription_perso_btn_close", "modal_desription_perso_background"]
+);
+
 function set_bulma_modal(id_modal, openers_elements_ids, closers_elements_ids) {
   let modal = document.getElementById(id_modal);
   openers_elements_ids.forEach((element) =>
